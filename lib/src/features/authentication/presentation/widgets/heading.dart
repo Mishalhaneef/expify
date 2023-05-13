@@ -3,14 +3,22 @@ import 'package:flutter/material.dart';
 import '../../../../../configs/app_styles.dart';
 
 class HeadText extends StatelessWidget {
-  const HeadText({super.key, required this.title, required this.subtitle});
+  const HeadText(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      this.crossAxisAlignment = CrossAxisAlignment.center,
+      this.width});
 
   final String title;
   final String subtitle;
+  final CrossAxisAlignment crossAxisAlignment;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: crossAxisAlignment,
       children: [
         Text(
           title,
@@ -20,9 +28,12 @@ class HeadText extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(
-          subtitle,
-          style: const TextStyle(color: AppColor.whiteLite),
+        SizedBox(
+          width: width,
+          child: Text(
+            subtitle,
+            style: const TextStyle(color: AppColor.whiteLite),
+          ),
         ),
       ],
     );

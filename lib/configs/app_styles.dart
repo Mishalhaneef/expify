@@ -10,4 +10,6 @@ class AppColor {
   static const black = Color(0xff303030);
   static const greyDeep = Color(0xff626279);
   static const greyLite = Color(0xffF3F3F5);
+  static const blueLowOpacity = Color(0xffF5EFFA);
+  static const blue = Color(0xffAE86CF);
 }
